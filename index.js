@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 });
 
 io.on("connection", (socket) => {
+  // this will emit the id as soon as the connection opens
   socket.emit("me", socket.id);
 
   socket.on("disconnect", () => {
